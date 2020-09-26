@@ -1,0 +1,12 @@
+fr/kalnet/birthdaysapp/repositories/UserRepository.class
+fr/kalnet/birthdaysapp/services/BirthdayService.class
+fr/kalnet/birthdaysapp/models/User.class
+fr/kalnet/birthdaysapp/controllers/BirthdayController.class
+fr/kalnet/birthdaysapp/controllers/UserController.class
+fr/kalnet/birthdaysapp/controllers/MainController.class
+fr/kalnet/birthdaysapp/models/Birthday.class
+fr/kalnet/birthdaysapp/services/BirthdayServiceImpl.class
+fr/kalnet/birthdaysapp/services/UserService.class
+fr/kalnet/birthdaysapp/services/UserServiceImpl.class
+fr/kalnet/birthdaysapp/MainClass.class
+fr/kalnet/birthdaysapp/repositories/BirthdayRepository.class
