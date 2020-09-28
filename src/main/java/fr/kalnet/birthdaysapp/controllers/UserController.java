@@ -41,6 +41,12 @@ public class UserController {
 		return userService.getUser(id);
 	}
 	
+	// Return list of all birthdays
+	@GetMapping("/birthdays")
+	public List<Birthday> getBirthdays() {
+		return birthdayService.getAllBirthdays();
+	}
+	
 	// Return birthdays list of user since his id
 	@GetMapping("/{userId}/birthdays")
 	public Set<Birthday> getBirthdaysByUser(@PathVariable("userId") Long id) {
@@ -86,6 +92,25 @@ public class UserController {
 		else return null;
 	}
 	
+	// Update and return a birthday since the id by year, month, day, firstname, lastname (all required)
+	@PutMapping("/{userId}/birthdays/{birthdayId}/update")
+	public Birthday updateBirthday(
+			@PathVariable("userId") Long userId, 
+			@RequestParam("email") String email, 
+			@RequestParam("password") String password,
+			@PathVariable("birthdayId") Long birthdayId, 
+			@RequestParam("year") int year,
+			@RequestParam("month") int month,
+			@RequestParam("day") int day,
+			@RequestParam("birthdayFirstname") String firstname,
+			@RequestParam("birthdayLastname") String lastname) {
+		User user = userService.login(email, password);
+		if(user != null && birthdayService.isBirthdayToUser(birthdayId, user.getId()) && userId == user.getId()) {
+			return birthdayService.updateBirthday(birthdayId, LocalDate.of(year, month, day), firstname, lastname);
+		}
+		else return null;
+	}
+	
 	// Delete a user since his id
 	@DeleteMapping("/{userId}/delete")
 	public void deleteUser(
@@ -99,5 +124,17 @@ public class UserController {
 			}
 			userService.deleteUser(id);
 		}
+	}
+	
+	// Delete a birthday since the id
+	@DeleteMapping("/{userId}/birthdays/{birthdayId}/delete")
+	public void deleteBirthday(
+			@PathVariable("userId") Long userId,
+			@RequestParam("email") String email, 
+			@RequestParam("password") String password,
+			@PathVariable("birthdayId") Long birthdayId) {
+		User user = userService.login(email, password);
+		if(user != null && user.getId() == userId)
+			birthdayService.deleteBirthday(birthdayId);
 	}
 }
