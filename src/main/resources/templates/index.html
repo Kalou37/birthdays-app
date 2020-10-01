@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org">
+<link href="/assets/css/style.css" rel="stylesheet" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello from Github</title>
+</head>
+<body>
+    <h1 class="title">Mes Anniversaires !</h1>
+    
+     <div id="container">
+            
+            <form action="/connexion" th:object="${userModel}" method="POST">
+                <h1>Connexion</h1>
+                <p class="failed" th:if="${failed}">Echec d'identification</p>
+                <label><b>Email utilisateur</b></label>
+                <input type="text" placeholder="Email" name="email" required>
+
+                <label><b>Mot de passe</b></label>
+                <input type="password" placeholder="Mot de passe" name="password" required>
+
+                <input type="submit" id='submit' value='CONNEXION' >
+            </form>
+        </div>
+        <p class="lien"><a href="/signin">INSCRIPTION</a></p>
+</body>
+</html>

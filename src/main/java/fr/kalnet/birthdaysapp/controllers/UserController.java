@@ -49,7 +49,7 @@ public class UserController {
 	
 	// Return birthdays list of user since his id
 	@GetMapping("/{userId}/birthdays")
-	public Set<Birthday> getBirthdaysByUser(@PathVariable("userId") Long id) {
+	public List<Birthday> getBirthdaysByUser(@PathVariable("userId") Long id) {
 		return userService.getUser(id).getBirthdays();
 	}
 	

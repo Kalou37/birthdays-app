@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org">
+<link th:href="@{/assets/css/style.css}" rel="stylesheet" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello from Github</title>
+</head>
+<body>
+    <h1 class="title">Liste des anniversaires de <span th:text="${user.username}">l'utilisateur</span></h1>
+    <p class="lien"><a href="/addbirthday">AJOUTER UN ANNIVERSAIRE</a></p>
+    <div class="liste">
+    <table>
+    <tr>
+    <th>Nom :</th><th>Prénom :</th><th>Date :</th>
+    </tr>
+    <tr th:each="bd:${birthdays}">
+    <td th:text="bd.lastname"></td>
+    <td th:text="bd.firstname"></td>
+    <td th:text="bd.date"></td>
+    </tr>
+    </table>
+	</div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 package fr.kalnet.birthdaysapp.models;
 
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,15 +17,21 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String username;
 	private String email;
+	private String username;
 	private String password;
 	
 	@OneToMany(mappedBy="user")
-	private Set<Birthday> birthdays;
+	private List<Birthday> birthdays;
 	
 	public User() {
 		super();
+	}
+	
+	public User(String pEmail, String pPassword) {
+		super();
+		this.email = pEmail;
+		this.password = pPassword;
 	}
 	
 	public User(String pUsername, String pEmail, String pPassword) {
@@ -64,7 +70,7 @@ public class User {
 		this.birthdays.add(birthday);
 	}
 	
-	public Set<Birthday> getBirthdays() {
+	public List<Birthday> getBirthdays() {
 		return birthdays;
 	}
 
