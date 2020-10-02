@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org">
+<link href="/assets/css/style.css" rel="stylesheet" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello from Github</title>
+</head>
+<body>
+    <h1 class="title">Ajout anniversaires !</h1>
+    
+     <div id="container">
+            
+            <form action="/savebirthday" th:object="${birthdayModel}" method="POST">
+                <h1>Nouvel anniversaire</h1>
+
+                <label><b>Prénom</b></label>
+                <input type="text" placeholder="Entrer le prénom" name="firstname" required>
+                
+                <label><b>Nom</b></label>
+                <input type="text" placeholder="Entrer le nom" name="lastname" required>
+
+                <label><b>Date de naissance</b></label><br>
+                <input type="date" name="date" value="2000-01-01" required>
+
+                <input type="submit" id='submit' value='ENVOYER' >
+            </form>
+        </div>
+        <p class="lien"><a href="/user">RETOUR</a></p>
+</body>
+</html>

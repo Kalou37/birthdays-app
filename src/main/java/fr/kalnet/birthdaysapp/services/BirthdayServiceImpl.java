@@ -50,4 +50,11 @@ public class BirthdayServiceImpl implements BirthdayService{
 		return birthdayRepository.isBirthdayToUser(bdId, userId).isPresent();
 	}
 
+	@Override
+	public Birthday getBirthday(Long id) {
+		if(birthdayRepository.findById(id).isPresent())
+			return birthdayRepository.findById(id).get();
+		return null;
+	}
+
 }

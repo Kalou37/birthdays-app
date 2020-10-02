@@ -12,12 +12,13 @@
     <div class="liste">
     <table>
     <tr>
-    <th>Nom :</th><th>Prénom :</th><th>Date :</th>
+    <th>Nom :</th><th>Prénom :</th><th>Date :</th><th></th>
     </tr>
     <tr th:each="bd:${birthdays}">
-    <td th:text="bd.lastname"></td>
-    <td th:text="bd.firstname"></td>
-    <td th:text="bd.date"></td>
+    <td th:text="${bd.lastName}"></td>
+    <td th:text="${bd.firstName}"></td>
+    <td th:text="${bd.date}"></td>
+    <td><a th:href="@{/updatebirthday/}+${bd.id}"><img th:src="@{/assets/img/update.png}"></a> <a th:href="@{/deletebirthday/}+${bd.id}"><img th:src="@{/assets/img/delete.png}"></a></td>
     </tr>
     </table>
 	</div>

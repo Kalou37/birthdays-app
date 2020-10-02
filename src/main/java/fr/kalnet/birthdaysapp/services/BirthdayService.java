@@ -9,6 +9,7 @@ public interface BirthdayService {
 	public List<Birthday> getAllBirthdays();
 	public Birthday save(Birthday birthday);
 	public Birthday updateBirthday(Long id, LocalDate date, String firstname, String lastname);
+	public Birthday getBirthday(Long id);
 	public void deleteBirthday(Long id);
 	public boolean isBirthdayToUser(Long bdId, Long userId);
 }

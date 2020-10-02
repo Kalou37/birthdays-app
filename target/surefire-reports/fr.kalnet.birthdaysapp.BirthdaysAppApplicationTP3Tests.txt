@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: fr.kalnet.birthdaysapp.BirthdaysAppApplicationTP3Tests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.671 s - in fr.kalnet.birthdaysapp.BirthdaysAppApplicationTP3Tests
