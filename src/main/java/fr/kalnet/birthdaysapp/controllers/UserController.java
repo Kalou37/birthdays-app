@@ -29,10 +29,10 @@ public class UserController {
 	private BirthdayService birthdayService;
 	
 	// Return all users (with they birthdays)
-	//@GetMapping(value = { "", "/" })
-	//public List<User> getUsers() {
-	//	return userService.getAllUsers();
-	//}
+	@GetMapping(value = { "", "/" })
+	public List<User> getUsers() {
+		return userService.getAllUsers();
+	}
 	
 	// Return a user since his id
 	@GetMapping("/{userId}")
