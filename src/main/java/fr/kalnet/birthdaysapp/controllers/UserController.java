@@ -35,10 +35,10 @@ public class UserController {
 	//}
 	
 	// Return a user since his id
-	//@GetMapping("/{userId}")
-	//public User getUserById(@PathVariable("userId") Long id) {
-	//	return userService.getUser(id);
-	//}
+	@GetMapping("/{userId}")
+	public User getUserById(@PathVariable("userId") Long id) {
+		return userService.getUser(id);
+	}
 	
 	// Return list of all birthdays
 	//@GetMapping("/birthdays")
